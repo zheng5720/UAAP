@@ -23,5 +23,6 @@
 	<modules>
 		<module>uaap_log</module>
 		<module>uaap_service</module>
+		<module>uaap_checkAuthorization_aop</module>
 	</modules>
 </project>
