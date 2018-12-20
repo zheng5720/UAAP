@@ -22,5 +22,6 @@
 	</dependencies>
 	<modules>
 		<module>uaap_log</module>
+		<module>uaap_service</module>
 	</modules>
 </project>
