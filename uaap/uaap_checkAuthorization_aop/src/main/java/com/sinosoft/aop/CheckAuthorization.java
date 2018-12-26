@@ -21,7 +21,7 @@ import com.sinosoft.service.ICheckIsLoginService;
 @Aspect
 @Component
 @Order(-1)
-public class CheckAuthorizationAOP {
+public class CheckAuthorization {
 
 	@Autowired
 	private ICheckIsLoginService checkIsLoginService;
