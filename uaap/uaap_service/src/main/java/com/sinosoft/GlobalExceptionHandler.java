@@ -10,7 +10,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(value = Exception.class)
 	public ErrorInfo<String> jsonErrorHandler(HttpServletRequest req, Exception e) throws Exception {
-		ErrorInfo<String> r = new ErrorInfo<>();
+		ErrorInfo<String> r = new ErrorInfo<String>();
 		r.setMessage(e.getMessage());
 		r.setCode(ErrorInfo.ERROR);
 		r.setData("Some Data");

@@ -45,7 +45,7 @@
 
 	function init() {
 		$.post("/user/isLogin", function(date) {
-			if (null == date || data.userId == null) {
+			if (null == date ||  null == data.userId) {
 				alert("退出成功")
 				$("#nologin").show();
 				$("#inlogin").hide();
