@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+	$(document).ready(function() {
+		init();
+
+		$("#login").click(function() {
+			$.post("/user/loginUser", {
+				"userId" : $("#userId").val(),
+				"deptId" : $("deptId").val()
+			}, function(date) {
+				if (null == date || data.userId == null) {
+					$("#nologin").show();
+					$("#inlogin").hide();
+				} else {
+					alert("登录成功");
+					$("#nologin").show();
+					$("#inlogin").hide();
+					$("#username").html(data.userId);
+				}
+				myframe.location = "/user/getLoginUser";
+			});
+		});
+
+		$("#signOut").click(function() {
+			$.post("/user/signOut", function(date) {
+				if (null == date || data.userId == null) {
+					alert("退出成功")
+					$("#nologin").show();
+					$("#inlogin").hide();
+				} else {
+					alert("登录成功");
+					$("#nologin").show();
+					$("#inlogin").hide();
+					$("#username").html(data.userId);
+				}
+				myframe.location = "/user/getLoginUser";
+			});
+		});
+	});
+
+	function init() {
+		$.post("/user/isLogin", function(date) {
+			if (null == date || data.userId == null) {
+				alert("退出成功")
+				$("#nologin").show();
+				$("#inlogin").hide();
+			} else {
+				alert("登录成功");
+				$("#nologin").show();
+				$("#inlogin").hide();
+				$("#username").html(data.userId);
+			}
+			myframe.location = "/user/getLoginUser";
+		});
+	}
+</script>
+</head>
+<body>
+	<div style="width: 80%; height: 960px; border: 1px solid #000">
+		<div
+			style="width: 100%; height: 30px; border-bottom: 1px solid #000; vertical-align: middle;">
+			<div></div>
+			<div id="nologin" style="float: right; margin: 2px;">
+				账户：<input type="text" id="userId" name="userId" value="A0133410">
+				密码：<input type="text" id="dept" name="userId" value="A0133410">
+				<a id="login" href="javaScropt:void(0);">【登录】</a>
+			</div>
+			<div id="inlogin" style="float: right; margin: 2px;">
+				您好：<font id="username"></font> <a id="signOut"
+					href="javaScropt:void(0);">【退出】</a>
+			</div>
+		</div>
+		<div>
+			<iframe id="myframe" name="myfram" width="90%" height="900px;"></iframe>
+		</div>
+	</div>
+</body>
+</html>
