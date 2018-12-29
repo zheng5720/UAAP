@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties(prefix="uaap.checkAuthorization")
+@Configuration
+@ConfigurationProperties(prefix="uaap.checkauthorization")
 public class CheckConfig {
 
 	//系统名称
@@ -30,4 +32,53 @@ public class CheckConfig {
 	public final static String SESSION_TYPE="2";
 	
 	private List<String> exclusionurl = new ArrayList<String>();
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+	}
+
+	public String getCheckISLoginType() {
+		return checkISLoginType;
+	}
+
+	public void setCheckISLoginType(String checkISLoginType) {
+		this.checkISLoginType = checkISLoginType;
+	}
+
+	public String getKeyName() {
+		return keyName;
+	}
+
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getCustomClass() {
+		return customClass;
+	}
+
+	public void setCustomClass(String customClass) {
+		this.customClass = customClass;
+	}
+
+	public List<String> getExclusionurl() {
+		return exclusionurl;
+	}
+
+	public void setExclusionurl(List<String> exclusionurl) {
+		this.exclusionurl = exclusionurl;
+	}
+	
 }
