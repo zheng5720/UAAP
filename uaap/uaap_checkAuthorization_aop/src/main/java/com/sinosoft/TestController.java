@@ -51,7 +51,6 @@ public class TestController {
 	@RequestMapping("/signOut")
 	public AuthUser signOut(HttpSession session) {
 		session.invalidate();
-		AuthUser authUser = new AuthUser();
-		return authUser;
+		return null;
 	}
 }

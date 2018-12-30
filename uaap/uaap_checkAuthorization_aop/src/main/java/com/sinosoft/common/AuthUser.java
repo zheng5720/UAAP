@@ -7,11 +7,11 @@ import lombok.Setter;
 @Setter
 public class AuthUser {
 
-	public String authToken;//用戶ID
+	public String authToken = "";//用戶ID
 	
-	public String userId;
+	public String userId = "";
 	
-	public String deptId;
+	public String deptId = "";
 	
 	
 }
